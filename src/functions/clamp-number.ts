@@ -10,7 +10,7 @@
  * @param maximum The maximum value.
  * @returns The clamped value.
  */
-export function clamp(value : number, minimum : number, maximum : number) : number
+export function clampNumber(value : number, minimum : number, maximum : number) : number
 {
 	return Math.min(Math.max(value, minimum), maximum);
 }

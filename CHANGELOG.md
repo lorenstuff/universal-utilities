@@ -1,4 +1,7 @@
 # Changelog
+## 2.2.2
+Fixed `clampNumber` being named incorrectly.
+
 ## 2.2.1
 Fixed `getUrlRedirectChain` being named incorrectly.
 
