@@ -5,6 +5,7 @@
 export * from "./data/local-ip-ranges.js";
 export * from "./data/random-string-characters.js";
 
+export * from "./functions/clamp-number.js";
 export * from "./functions/escape-sql-like-string.js";
 export * from "./functions/format-cents-as-usd.js";
 export * from "./functions/format-dollars-as-usd.js";

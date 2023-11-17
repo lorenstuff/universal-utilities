@@ -4,6 +4,7 @@
 * Added `usdFormatter` instance.
 * Added `formatCentsAsUsd` function.
 * Added `formatDollarsAsUsd` function.
+* Added `clampNumber` function.
 
 ## 2.0.0
 
