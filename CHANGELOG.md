@@ -7,6 +7,7 @@
 * Added `padStringWithNull` function.
 * Added `randomStringCharacters` array.
 * Added `generateRandomString` function.
+* Added `stringReplaceAllAsync` function.
 
 ## 1.0.0
 Initial release.
