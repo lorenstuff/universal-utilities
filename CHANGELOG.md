@@ -6,6 +6,9 @@
 * Added `formatDollarsAsUsd` function.
 * Added `clampNumber` function.
 * Added `generateRandomInteger` function.
+* Added `roundNumberDownToNearest` function.
+* Added `roundNumberToNearest` function.
+* Added `roundNumberUpToNearest` function.
 
 ## 2.0.0
 
