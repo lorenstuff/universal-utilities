@@ -1,4 +1,9 @@
 # Changelog
+## 1.2.0
+
+* Added `heartbeat` function.
+* Added `HeartbeatOptions` interface.
+
 ## 1.1.0
 
 * Added `splitStringIntoChunks` function.
