@@ -1,4 +1,8 @@
 # Changelog
+## 2.0.0
+
+* **[Breaking Change]** Changed `heartbeatUrl` to `url` in the `HeartbeatOptions` interface.
+
 ## 1.2.0
 
 * Added `heartbeat` function.

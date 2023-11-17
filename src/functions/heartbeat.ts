@@ -6,7 +6,7 @@
 export interface HeartbeatOptions
 {
 	/** The URL to ping. Pass null to disable the heartbeat. */
-	heartbeatUrl : string | null;
+	url : string | null;
 
 	/** The interval between pings, in milliseconds. Optional, defaults to 60000. */
 	intervalMilliseconds? : number;
@@ -26,7 +26,7 @@ export function heartbeat(options : HeartbeatOptions) : void
 	// Check for Heartbeat URL
 	//
 
-	if (options.heartbeatUrl == null)
+	if (options.url == null)
 	{
 		return;
 	}
@@ -35,7 +35,7 @@ export function heartbeat(options : HeartbeatOptions) : void
 	// Options
 	//
 
-	const heartbeatUrl = options.heartbeatUrl;
+	const url = options.url;
 
 	const intervalMilliseconds = options.intervalMilliseconds ?? 60000;
 
@@ -50,7 +50,7 @@ export function heartbeat(options : HeartbeatOptions) : void
 		console.log("[Heartbeat] Pinging heartbeat URL...");
 
 		// noinspection JSIgnoredPromiseFromCall
-		fetch(heartbeatUrl,
+		fetch(url,
 			{
 				method,
 			});
