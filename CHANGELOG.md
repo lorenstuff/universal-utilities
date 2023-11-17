@@ -3,6 +3,7 @@
 
 * Added `usdFormatter` instance.
 * Added `formatCentsAsUsd` function.
+* Added `formatDollarsAsUsd` function.
 
 ## 2.0.0
 
