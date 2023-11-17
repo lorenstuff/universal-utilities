@@ -2,6 +2,7 @@
 ## 2.1.0
 
 * Added `usdFormatter` instance.
+* Added `formatCentsAsUsd` function.
 
 ## 2.0.0
 
