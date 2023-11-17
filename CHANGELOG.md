@@ -6,6 +6,7 @@
 * Added `isLocalIpAddress` function.
 * Added `padStringWithNull` function.
 * Added `randomStringCharacters` array.
+* Added `generateRandomString` function.
 
 ## 1.0.0
 Initial release.
