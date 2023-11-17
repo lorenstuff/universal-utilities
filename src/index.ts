@@ -11,3 +11,4 @@ export * from "./functions/is-local-ip-address.js";
 export * from "./functions/pad-string-with-null.js";
 export * from "./functions/split-string-into-chunks.js";
 export * from "./functions/string-replace-all-async.js";
+export * from "./functions/trim-null-from-string.js";
