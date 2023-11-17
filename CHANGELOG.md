@@ -1,4 +1,8 @@
 # Changelog
+## 2.2.0
+
+* Added `isValidUrl` function.
+
 ## 2.1.0
 
 * Added `usdFormatter` instance.
