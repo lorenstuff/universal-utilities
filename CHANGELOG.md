@@ -2,6 +2,9 @@
 ## 2.2.0
 
 * Added `isValidUrl` function.
+* Added `noHeadRequestDomains` array.
+* Added `getUrlLocationHeader` function.
+* Added `getUrlRedirectChain` function.
 
 ## 2.1.0
 
@@ -13,8 +16,6 @@
 * Added `roundNumberDownToNearest` function.
 * Added `roundNumberToNearest` function.
 * Added `roundNumberUpToNearest` function.
-* Added `noHeadRequestDomains` array.
-* Added `getUrlLocationHeader` function.
 
 ## 2.0.0
 
