@@ -13,6 +13,7 @@
 * Added `roundNumberDownToNearest` function.
 * Added `roundNumberToNearest` function.
 * Added `roundNumberUpToNearest` function.
+* Added `noHeadRequestDomains` array.
 
 ## 2.0.0
 

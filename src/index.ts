@@ -3,6 +3,7 @@
 //
 
 export * from "./data/local-ip-ranges.js";
+export * from "./data/no-head-request-domains.js";
 export * from "./data/random-string-characters.js";
 
 export * from "./functions/clamp-number.js";
