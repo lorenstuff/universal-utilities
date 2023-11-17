@@ -5,6 +5,7 @@
 * Added `formatCentsAsUsd` function.
 * Added `formatDollarsAsUsd` function.
 * Added `clampNumber` function.
+* Added `generateRandomInteger` function.
 
 ## 2.0.0
 
