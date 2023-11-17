@@ -14,6 +14,7 @@
 * Added `roundNumberToNearest` function.
 * Added `roundNumberUpToNearest` function.
 * Added `noHeadRequestDomains` array.
+* Added `getUrlLocationHeader` function.
 
 ## 2.0.0
 

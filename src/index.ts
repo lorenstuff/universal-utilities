@@ -12,6 +12,7 @@ export * from "./functions/format-cents-as-usd.js";
 export * from "./functions/format-dollars-as-usd.js";
 export * from "./functions/generate-random-integer.js";
 export * from "./functions/generate-random-string.js";
+export * from "./functions/get-url-location-header.js";
 export * from "./functions/heartbeat.js";
 export * from "./functions/is-local-ip-address.js";
 export * from "./functions/is-valid-url.js";
