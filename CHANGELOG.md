@@ -1,4 +1,8 @@
 # Changelog
+## 2.1.0
+
+* Added `usdFormatter` instance.
+
 ## 2.0.0
 
 * **[Breaking Change]** Changed `heartbeatUrl` to `url` in the `HeartbeatOptions` interface.
