@@ -5,6 +5,7 @@
 * Added `localIpRanges` array.
 * Added `isLocalIpAddress` function.
 * Added `padStringWithNull` function.
+* Added `randomStringCharacters` array.
 
 ## 1.0.0
 Initial release.
