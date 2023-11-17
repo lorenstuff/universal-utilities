@@ -15,7 +15,7 @@ import { getUrlLocationHeader } from "./get-url-location-header.js";
  * @param maxChainLength The maximum length of the redirect chain. Defaults to 20 to match browsers.
  * @returns An array of URLs in the chain. This will be null if something went wrong getting the chain.
  */
-export async function getRedirectChain(url : URL, maxChainLength = 20) : Promise<URL[] | null>
+export async function getUrlRedirectChain(url : URL, maxChainLength = 20) : Promise<URL[] | null>
 {
 	const chain = [];
 

@@ -1,4 +1,7 @@
 # Changelog
+## 2.2.1
+Fixed `getUrlRedirectChain` being named incorrectly.
+
 ## 2.2.0
 
 * Added `isValidUrl` function.
