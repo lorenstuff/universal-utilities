@@ -1,0 +1,25 @@
+{
+	"name": "@donutteam/utilities",
+	"version": "1.0.0",
+	"description": "A collection of various utility functions.",
+	"main": "./lib/index.js",
+	"scripts": {
+		"build": "npx rimraf lib && npx tsc",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/donutteam/npm-utilities.git"
+	},
+	"keywords": [
+		"util",
+		"utilities"
+	],
+	"author": "Donut Team",
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"rimraf": "^5.0.5",
+		"typescript": "^5.2.2"
+	}
+}
