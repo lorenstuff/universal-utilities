@@ -1,4 +1,9 @@
 # Changelog
+## 2.3.0
+
+* Updated TypeScript.
+* Replaced TypeScript config with @donutteam/typescript-config
+
 ## 2.2.2
 Fixed `clampNumber` being named incorrectly.
 
