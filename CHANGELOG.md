@@ -3,6 +3,7 @@
 
 * Updated TypeScript.
 * Replaced TypeScript config with @donutteam/typescript-config
+* Added `splitArrayIntoChunks` function.
 
 ## 2.2.2
 Fixed `clampNumber` being named incorrectly.

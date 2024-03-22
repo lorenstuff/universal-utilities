@@ -22,6 +22,7 @@ export * from "./functions/round-number-down-to-nearest.js";
 export * from "./functions/round-number-to-nearest.js";
 export * from "./functions/round-number-up-to-nearest.js";
 export * from "./functions/split-string-into-chunks.js";
+export * from "./functions/split-string-into-chunks.js";
 export * from "./functions/string-replace-all-async.js";
 export * from "./functions/trim-null-from-string.js";
 
