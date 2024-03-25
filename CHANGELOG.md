@@ -1,4 +1,7 @@
 # Changelog
+## 2.3.1
+Fixing `splitArrayIntoChunks` export.
+
 ## 2.3.0
 
 * Updated TypeScript.
