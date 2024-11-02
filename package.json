@@ -2,9 +2,9 @@
 	"name": "@donutteam/utilities",
 	"version": "2.3.1",
 	"description": "A collection of various utility functions.",
-	"main": "./lib/index.js",
+	"main": "./build/index.js",
 	"scripts": {
-		"build": "npx rimraf lib && npx tsc",
+		"build": "npx rimraf build && npx tsc",
 		"prepublishOnly": "npm run build"
 	},
 	"repository": {
@@ -18,8 +18,10 @@
 	"author": "Donut Team",
 	"license": "MIT",
 	"type": "module",
+	"dependencies": {
+		"@types/node": "^22.8.6"
+	},
 	"devDependencies": {
-		"@donutteam/typescript-config": "^1.0.0",
 		"rimraf": "^5.0.5",
 		"typescript": "^5.4.3"
 	}
