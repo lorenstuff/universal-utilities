@@ -1,4 +1,37 @@
 # Changelog
+## 3.0.0
+Rewrote the package into several categorized libraries and moved all the existing functions into these libraries:
+
+* ArrayLib
+	* `splitArrayIntoChunks` -> `splitIntoChunks`
+* CurrencyLib
+	* `formatCentsAsUsd`
+	* `formatDollarsAsUsd`
+* NetworkLib
+	* `heartbeat`
+	* `isLocalIpAddress` -> `isLocal`
+* NumberLib
+	* `clampNumber` -> `clamp`
+	* `generateRandomInteger` -> `randomInteger`
+	* `roundNumberDownToNearest` -> `roundDownToNearest`
+	* `roundNumberToNearest` -> `roundToNearest`
+	* `roundNumberUpToNearest` -> `roundUpToNearest`
+* SqlLib
+	* `escapeSqlLikeString` -> `escapeLikeString`
+* StringLib
+	* `padStringWithNull` -> `padNull`
+	* `generateRandomString` -> `randomString`
+	* `splitStringIntoChunks` -> `splitIntoChunks`
+	* `trimNullFromString` -> `trimNull`
+* UrlLib
+	* `getUrlLocationHeader` -> `getLocationHeader`
+	* `getUrlRedirectChain` -> `getRedirectChain`
+
+The following functions were also removed entirely:
+
+* `isValidUrl`
+* `stringReplaceAllAsync`
+
 ## 2.3.1
 Fixing `splitArrayIntoChunks` export.
 

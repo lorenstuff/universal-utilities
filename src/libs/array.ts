@@ -9,14 +9,14 @@
  * @param chunkLength The length of each chunk in the returned array.
  * @returns An array of arrays, each of which is a chunk of the input array.
  */
-export function splitArrayIntoChunks<ArrayType>(inputArray : ArrayType[], chunkLength : number) : ArrayType[][]
+export function splitIntoChunks<ArrayType>(inputArray: ArrayType[], chunkLength: number)
 {
 	if (chunkLength < 1)
 	{
 		chunkLength = 1;
 	}
 
-	const arrays : ArrayType[][] = [];
+	const arrays: ArrayType[][] = [];
 
 	for(let i = 0; i < inputArray.length; i += chunkLength)
 	{

@@ -1,5 +1,5 @@
 //
-// SQL Utilities
+// Utility Function
 //
 
 /**
@@ -8,7 +8,7 @@
  * @param inputString The string to escape.
  * @return The escaped string.
  */
-export function escapeSqlLikeString(inputString : string) : string
+export function escapeLikeString(inputString: string)
 {
 	return inputString.replace(new RegExp("\\\\", "g"), "\\" + "\\")
 		.replace(new RegExp("_", "g"), "\\" + "_")
