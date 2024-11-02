@@ -1,4 +1,16 @@
 # Changelog
+## 3.1.0
+Added new functions:
+
+* CountryLib (NEW)
+	* `isEurope`
+* StringLib
+	* `formatBytes`
+	* `formatSeconds`
+* UrlLib
+	* `getFontAwesomeIconName`
+
+
 ## 3.0.0
 Rewrote the package into several categorized libraries and moved all the existing functions into these libraries:
 

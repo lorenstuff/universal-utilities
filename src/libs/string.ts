@@ -2,17 +2,83 @@
 // Constants
 //
 
-const randomStringCharacters: string[] =
+const byteSizes = [ "Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" ];
+
+const oneKiloByte = 1024;
+
+const randomStringCharacters =
 [
 	"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
 	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
 	"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
 	"_", "-",
-] as const;
+];
 
 //
 // Utility Functions
 //
+
+/**
+ * Formats a number of bytes as a human readable string.
+ * 
+ * @param bytes A number of bytes.
+ * @param numberOfDecimalPlaces The number of decimal places to round to. Optional, defaults to 2.
+ * @returns A string representation of the number of bytes, formatted with the appropriate unit. 
+ */
+export function formatBytes(bytes: number, numberOfDecimalPlaces = 2)
+{
+    if (bytes === 0)
+    {
+        return "0 Bytes";
+    }
+
+    numberOfDecimalPlaces = numberOfDecimalPlaces < 0 ? 0 : numberOfDecimalPlaces;
+
+    const byteSizeIndex = Math.floor(Math.log(bytes) / Math.log(oneKiloByte));
+
+    return parseFloat((bytes / Math.pow(oneKiloByte, byteSizeIndex)).toFixed(numberOfDecimalPlaces)) + " " + byteSizes[byteSizeIndex];
+}
+
+/**
+ * Formats a number of seconds as a human readable string.
+ * 
+ * @param totalSeconds A number of seconds.
+ * @returns A human readable string representation of the number of seconds.
+ */
+export function formatSeconds(totalSeconds: number)
+{
+	const components: string[] = [];
+
+	const days = Math.floor(totalSeconds / (60 * 60 * 24));
+
+	if (days > 0)
+	{
+		components.push(days + " day" + (days == 1 ? "" : "s"));
+	}
+
+	const hours = Math.floor(totalSeconds % (60 * 60 * 24) / (60 * 60));
+
+	if (hours > 0)
+	{
+		components.push(hours + " hour" + (hours == 1 ? "" : "s"));
+	}
+
+	const minutes = Math.floor(totalSeconds % (60 * 60) / 60);
+
+	if (minutes > 0)
+	{
+		components.push(minutes + " minute" + (minutes == 1 ? "" : "s"));
+	}
+
+	const seconds = Math.floor(totalSeconds % 60);
+
+	if (seconds > 0)
+	{
+		components.push(seconds + " second" + (seconds == 1 ? "" : "s"));
+	}
+
+	return components.join(", ");
+}
 
 /**
  * Pads a string with null characters to a given length.

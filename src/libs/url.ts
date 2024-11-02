@@ -3,7 +3,7 @@
 //
 
 /** These domains are known to be problematic with HEAD requests, so this array is here to just not even try them. */
-export const noHeadRequestDomains: string[] =
+const noHeadRequestDomains =
 [
 	"mega.co.nz",
 	"mega.io",
@@ -13,6 +13,63 @@ export const noHeadRequestDomains: string[] =
 //
 // Utility Functions
 //
+
+/**
+ * Gets a Font Awesome icon class name that corresponds to a given URL.
+ * 
+ * @param stringOrUrl A string or a URL object.
+ * @returns A Font Awesome icon class name that corresponds to the given URL.
+ */
+export function getFontAwesomeIconName(stringOrUrl: string | URL)
+{
+	try 
+	{
+		const url = new URL(stringOrUrl);
+
+		switch (url.hostname)
+		{
+			case "facebook.com":
+				return "fa-brands fa-facebook";
+	
+			case "github.com":
+				return "fa-brands fa-github";
+	
+			case "gitlab.com":
+				return "fa-brands fa-gitlab";
+	
+			case "mastodon.social":
+			case "mas.to":
+			case "home.social": // RIP
+			case "social.treehouse.systems":
+				return "fa-brands fa-mastodon";
+	
+			case "twitter.com":
+			case "x.com": // Elon Musk is a man child
+				return "fa-brands fa-twitter";
+	
+			case "reddit.com":
+			case "new.reddit.com":
+			case "old.reddit.com":
+				return "fa-brands fa-reddit";
+	
+			case "steamcommunity.com":
+			case "store.steampowered.com":
+				return "fa-brands fa-steam";
+	
+			case "youtube.com":
+			case "www.youtube.com":
+			case "youtu.be":
+				return "fa-brands fa-youtube";
+	
+			default:
+				return "fa-solid fa-link";
+		}
+	}
+	catch (error)
+	{
+		return "fa-solid fa-link";
+	}
+}
 
 /**
  * Fetches the requested URL and returns its Location header, if it has one.
