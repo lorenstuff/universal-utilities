@@ -3,6 +3,7 @@
 //
 
 export * as ArrayLib from "./libs/array.js";
+export * as CountryLib from "./libs/country.js";
 export * as CurrencyLib from "./libs/currency.js";
 export * as NetworkLib from "./libs/network.js";
 export * as NumberLib from "./libs/number.js";

@@ -1,4 +1,7 @@
 # Changelog
+## 3.1.1
+Added missing `CountryLib` export.
+
 ## 3.1.0
 Added new functions:
 
