@@ -1,4 +1,10 @@
 # Changelog
+## 3.2.0
+Added new functions:
+
+* NumberLib
+	* `format`
+
 ## 3.1.1
 Added missing `CountryLib` export.
 

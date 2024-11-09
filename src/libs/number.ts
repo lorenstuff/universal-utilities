@@ -1,4 +1,10 @@
 //
+// Constants
+//
+
+export const numberFormatter = new Intl.NumberFormat("en-US");
+
+//
 // Utility Functions
 //
 
@@ -13,6 +19,17 @@
 export function clamp(value: number, minimum: number, maximum: number)
 {
 	return Math.min(Math.max(value, minimum), maximum);
+}
+
+/**
+ * Formats a number as a string.
+ * 
+ * @param input The number to format.
+ * @returns The formatted number.
+ */
+export function format(input: number)
+{
+	return numberFormatter.format(input);
 }
 
 /**
