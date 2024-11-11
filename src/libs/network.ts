@@ -31,19 +31,6 @@ const localIpRanges: RegExp[] =
 // Utility Functions
 //
 
-/**
- * Checks if the given IP address is a local IP address.
- *
- * Does NOT check if the given IP address is a valid IP address.
- *
- * @param ipAddress An IP address.
- * @returns Whether the given IP address is a local IP address.
- */
-export function isLocalIp(ipAddress: string)
-{
-	return ipAddress === "::1" || ipAddress === "::1" || localIpRanges.some((range) => range.test(ipAddress));
-}
-
 /** Options for the heartbeat function. */
 export type HeartbeatOptions =
 {
@@ -81,4 +68,17 @@ export function heartbeat(options: HeartbeatOptions)
 	};
 
 	doHeartbeat();
+}
+
+/**
+ * Checks if the given IP address is a local IP address.
+ *
+ * Does NOT check if the given IP address is a valid IP address.
+ *
+ * @param ipAddress An IP address.
+ * @returns Whether the given IP address is a local IP address.
+ */
+export function isLocalIp(ipAddress: string)
+{
+	return ipAddress === "::1" || ipAddress === "::1" || localIpRanges.some((range) => range.test(ipAddress));
 }
