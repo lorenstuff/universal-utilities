@@ -71,6 +71,17 @@ export function heartbeat(options: HeartbeatOptions)
 }
 
 /**
+ * Returns whether the given status code indicates an empty body.
+ * 
+ * @param statusCode A status code.
+ * @returns Whether the given status code indicates an empty body.
+ */
+export function isEmptyBodyStatusCode(statusCode: number)
+{
+	return [ 204, 205, 304 ].includes(statusCode);
+}
+
+/**
  * Checks if the given IP address is a local IP address.
  *
  * Does NOT check if the given IP address is a valid IP address.
@@ -81,4 +92,15 @@ export function heartbeat(options: HeartbeatOptions)
 export function isLocalIp(ipAddress: string)
 {
 	return ipAddress === "::1" || ipAddress === "::1" || localIpRanges.some((range) => range.test(ipAddress));
+}
+
+/**
+ * Returns whether the given status code is a redirect status code.
+ * 
+ * @param statusCode A status code.
+ * @returns Whether the given status code is a redirect status code.
+ */
+export function isRedirectStatusCode(statusCode: number)
+{
+	return [ 300, 301, 302, 303, 305, 307, 308 ].includes(statusCode);
 }

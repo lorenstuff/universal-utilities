@@ -18,6 +18,39 @@ const randomStringCharacters =
 // Utility Functions
 //
 
+/** 
+ * Encodes a HTML string.
+ * 
+ * @param rawString The raw string to encode.
+ * @returns The encoded string.
+ */
+export function encodeHtml(rawString: string)
+{
+	return rawString.replace(/[<>&"']/g, (char) =>
+	{
+		switch (char)
+		{
+			case "<":
+				return "&lt;";
+
+			case ">":
+				return "&gt;";
+
+			case "&":
+				return "&amp;";
+
+			case "\"":
+				return "&quot;";
+
+			case "'":
+				return "&apos;";
+
+			default:
+				return char;
+		}
+	});
+}
+
 /**
  * Formats a number of bytes as a human readable string.
  * 

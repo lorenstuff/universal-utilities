@@ -1,4 +1,13 @@
 # Changelog
+## 3.3.0
+Added new functions:
+
+* NetworkLib
+	* `isEmptyBodyStatusCode`
+	* `isRedirectStatusCode`
+* StringLib
+	* `encodeHTML`
+
 ## 3.2.0
 Added new functions:
 
