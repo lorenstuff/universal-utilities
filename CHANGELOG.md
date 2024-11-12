@@ -1,4 +1,8 @@
 # Changelog
+## 3.3.1
+
+* refactor: extended @donutteam/typescript-config
+
 ## 3.3.0
 Added new functions:
 
