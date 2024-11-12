@@ -2,6 +2,7 @@
 ## 3.3.1
 
 * refactor: extended @donutteam/typescript-config
+* chore: updated packages
 
 ## 3.3.0
 Added new functions:
