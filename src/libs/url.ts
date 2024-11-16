@@ -28,6 +28,9 @@ export function getFontAwesomeIconName(stringOrUrl: string | URL)
 
 		switch (url.hostname)
 		{
+			case "bsky.app":
+				return "fa-brands fa-bluesky";
+
 			case "facebook.com":
 				return "fa-brands fa-facebook";
 	

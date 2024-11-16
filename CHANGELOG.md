@@ -1,4 +1,8 @@
 # Changelog
+## 3.3.2
+
+* feat: added support for bsky.app to UrlLib.getFontAwesomeIconName
+
 ## 3.3.1
 
 * refactor: extended @donutteam/typescript-config
