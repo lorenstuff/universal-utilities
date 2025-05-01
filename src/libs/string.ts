@@ -18,12 +18,6 @@ const randomStringCharacters =
 // Utility Functions
 //
 
-/** 
- * Encodes a HTML string.
- * 
- * @param rawString The raw string to encode.
- * @returns The encoded string.
- */
 export function encodeHtml(rawString: string)
 {
 	return rawString.replace(/[<>&"']/g, (char) =>
@@ -51,14 +45,7 @@ export function encodeHtml(rawString: string)
 	});
 }
 
-/**
- * Formats a number of bytes as a human readable string.
- * 
- * @param bytes A number of bytes.
- * @param numberOfDecimalPlaces The number of decimal places to round to. Optional, defaults to 2.
- * @returns A string representation of the number of bytes, formatted with the appropriate unit. 
- */
-export function formatBytes(bytes: number, numberOfDecimalPlaces = 2)
+export function formatNumberOfBytes(bytes: number, numberOfDecimalPlaces = 2)
 {
     if (bytes === 0)
     {
@@ -72,13 +59,7 @@ export function formatBytes(bytes: number, numberOfDecimalPlaces = 2)
     return parseFloat((bytes / Math.pow(oneKiloByte, byteSizeIndex)).toFixed(numberOfDecimalPlaces)) + " " + byteSizes[byteSizeIndex];
 }
 
-/**
- * Formats a number of seconds as a human readable string.
- * 
- * @param totalSeconds A number of seconds.
- * @returns A human readable string representation of the number of seconds.
- */
-export function formatSeconds(totalSeconds: number)
+export function formatNumberOfSeconds(totalSeconds: number)
 {
 	const components: string[] = [];
 
@@ -113,14 +94,7 @@ export function formatSeconds(totalSeconds: number)
 	return components.join(", ");
 }
 
-/**
- * Pads a string with null characters to a given length.
- *
- * @param inputString The input string.
- * @param length Pad to a multiple of this amount. Optional, defaults to 16.
- * @returns A null padded string.
- */
-export function padNull(inputString: string, length = 16)
+export function padStringWithNull(inputString: string, length = 16)
 {
 	const paddingNeeded = length - (inputString.length % length);
 
@@ -135,14 +109,7 @@ export function padNull(inputString: string, length = 16)
 	return inputString;
 }
 
-/**
- * Generates a cryptographically secure random string.
- *
- * @param length The length of the random string. Optional, defaults to 20.
- * @returns A randomly generated string.
- * @author Lucas Cardellini
- */
-export function randomString(length = 20)
+export function getRandomString(length = 20)
 {
 	const Input = new Uint8Array(Math.ceil(length / 4) * 3);
 
@@ -192,14 +159,7 @@ export function randomString(length = 20)
 	return Result;
 }
 
-/**
- * Splits the given string into chunks of the specified length.
- *
- * @param inputString The input string
- * @param chunkLength The length of each chunk in the returned string array.
- * @returns An array of strings, each of which is a chunk of the input string.
- */
-export function splitIntoChunks(inputString: string, chunkLength: number)
+export function splitStringIntoChunks(inputString: string, chunkLength: number)
 {
 	if (chunkLength < 1)
 	{
@@ -211,13 +171,7 @@ export function splitIntoChunks(inputString: string, chunkLength: number)
 	return matchResult ?? [];
 }
 
-/**
- * Trims trailing null characters from a string.
- *
- * @param inputString The input string.
- * @returns The input string without trailing null characters.
- */
-export function trimNull(inputString: string)
+export function trimNullFromString(inputString: string)
 {
 	const nullPosition = inputString.indexOf("\0");
 

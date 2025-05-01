@@ -2,7 +2,6 @@
 // Constants
 //
 
-/** These domains are known to be problematic with HEAD requests, so this array is here to just not even try them. */
 const noHeadRequestDomains =
 [
 	"mega.co.nz",
@@ -14,77 +13,63 @@ const noHeadRequestDomains =
 // Utility Functions
 //
 
-/**
- * Gets a Font Awesome icon class name that corresponds to a given URL.
- * 
- * @param stringOrUrl A string or a URL object.
- * @returns A Font Awesome icon class name that corresponds to the given URL.
- */
-export function getFontAwesomeIconName(stringOrUrl: string | URL)
+export function getUrlFontAwesomeIconName(stringOrUrl: string | URL)
 {
-	try 
-	{
-		const url = new URL(stringOrUrl);
-
-		switch (url.hostname)
-		{
-			case "bsky.app":
-				return "fa-brands fa-bluesky";
-
-			case "facebook.com":
-				return "fa-brands fa-facebook";
-	
-			case "github.com":
-				return "fa-brands fa-github";
-	
-			case "gitlab.com":
-				return "fa-brands fa-gitlab";
-	
-			case "mastodon.social":
-			case "mas.to":
-			case "home.social": // RIP
-			case "social.treehouse.systems":
-				return "fa-brands fa-mastodon";
-	
-			case "twitter.com":
-			case "x.com": // Elon Musk is a man child
-				return "fa-brands fa-twitter";
-	
-			case "reddit.com":
-			case "new.reddit.com":
-			case "old.reddit.com":
-				return "fa-brands fa-reddit";
-	
-			case "steamcommunity.com":
-			case "store.steampowered.com":
-				return "fa-brands fa-steam";
-	
-			case "youtube.com":
-			case "www.youtube.com":
-			case "youtu.be":
-				return "fa-brands fa-youtube";
-	
-			default:
-				return "fa-solid fa-link";
-		}
-	}
-	catch (error)
+	if (typeof stringOrUrl == "string" && !URL.canParse(stringOrUrl))
 	{
 		return "fa-solid fa-link";
 	}
+
+	const url = new URL(stringOrUrl);
+
+	switch (url.hostname)
+	{
+		case "bsky.app":
+			return "fa-brands fa-bluesky";
+
+		case "facebook.com":
+			return "fa-brands fa-facebook";
+
+		case "github.com":
+			return "fa-brands fa-github";
+
+		case "gitlab.com":
+			return "fa-brands fa-gitlab";
+
+		case "mastodon.social":
+		case "mas.to":
+		case "home.social": // RIP
+		case "social.treehouse.systems":
+			return "fa-brands fa-mastodon";
+
+		case "twitter.com":
+		case "x.com": // Elon Musk is a man child
+			return "fa-brands fa-twitter";
+
+		case "reddit.com":
+		case "new.reddit.com":
+		case "old.reddit.com":
+			return "fa-brands fa-reddit";
+
+		case "steamcommunity.com":
+		case "store.steampowered.com":
+			return "fa-brands fa-steam";
+
+		case "youtube.com":
+		case "www.youtube.com":
+		case "youtu.be":
+			return "fa-brands fa-youtube";
+
+		default:
+			return "fa-solid fa-link";
+	}
 }
 
-/**
- * Fetches the requested URL and returns its Location header, if it has one.
- *
- * @param url A URL object.
- * @returns The Location header returned by the above URL OR null if it didn't have one.
- */
-export async function getLocationHeader(url: URL)
+export async function getUrlLocationHeader(url: URL)
 {
 	const tryHeadRequest = !noHeadRequestDomains.includes(url.hostname);
 
-	let response;
+	let response: Response | null = null;
 
 	if (tryHeadRequest)
 	{
@@ -110,7 +95,7 @@ export async function getLocationHeader(url: URL)
 		}
 	}
 
-	if (response == undefined)
+	if (response == null)
 	{
 		try
 		{
@@ -134,14 +119,7 @@ export async function getLocationHeader(url: URL)
 	return response.headers.get("Location");
 }
 
-/**
- * Gets the chain of URLs that a given URL redirects through.
- *
- * @param url A URL object.
- * @param maxChainLength The maximum length of the redirect chain. Defaults to 20 to match browsers.
- * @returns An array of URLs in the chain. This will be null if something went wrong getting the chain.
- */
-export async function getRedirectChain(url: URL, maxChainLength = 20)
+export async function getUrlRedirectChain(url: URL, maxChainLength = 20)
 {
 	const chain: URL[] = [];
 
@@ -151,7 +129,7 @@ export async function getRedirectChain(url: URL, maxChainLength = 20)
 
 		try
 		{
-			const locationHeader = await getLocationHeader(url);
+			const locationHeader = await getUrlLocationHeader(url);
 
 			if (locationHeader != undefined)
 			{

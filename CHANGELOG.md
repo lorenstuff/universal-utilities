@@ -1,4 +1,8 @@
 # Changelog
+## 4.0.0
+
+* refactor: flattened exports and rebranded package
+
 ## 3.3.2
 
 * feat: added support for bsky.app to UrlLib.getFontAwesomeIconName

@@ -2,7 +2,6 @@
 // Constants
 //
 
-/** A list of regular expressions that match local IP ranges. */
 const localIpRanges: RegExp[] =
 [
 	// 10.0.0.0 - 10.255.255.255
@@ -31,75 +30,16 @@ const localIpRanges: RegExp[] =
 // Utility Functions
 //
 
-/** Options for the heartbeat function. */
-export type HeartbeatOptions =
-{
-	/** The URL to ping. */
-	url: string;
-
-	/** The interval between pings in milliseconds. Optional, defaults to 60000. */
-	intervalMilliseconds?: number;
-
-	/** The HTTP method to use. Optional, defaults to "HEAD". */
-	method?: string;
-};
-
-/**
- * Pings the given URL regularly, like a heartbeat.
- *
- * @param options Options for the heartbeat.
- */
-export function heartbeat(options: HeartbeatOptions)
-{
-	const url = options.url;
-
-	const intervalMilliseconds = options.intervalMilliseconds ?? 60000;
-
-	const method = options.method ?? "HEAD";
-
-	const doHeartbeat = () =>
-	{
-		fetch(url,
-			{
-				method,
-			});
-
-		setTimeout(doHeartbeat, intervalMilliseconds);
-	};
-
-	doHeartbeat();
-}
-
-/**
- * Returns whether the given status code indicates an empty body.
- * 
- * @param statusCode A status code.
- * @returns Whether the given status code indicates an empty body.
- */
 export function isEmptyBodyStatusCode(statusCode: number)
 {
 	return [ 204, 205, 304 ].includes(statusCode);
 }
 
-/**
- * Checks if the given IP address is a local IP address.
- *
- * Does NOT check if the given IP address is a valid IP address.
- *
- * @param ipAddress An IP address.
- * @returns Whether the given IP address is a local IP address.
- */
-export function isLocalIp(ipAddress: string)
+export function isLocalIpAddress(ipAddress: string)
 {
 	return ipAddress === "::1" || ipAddress === "::1" || localIpRanges.some((range) => range.test(ipAddress));
 }
 
-/**
- * Returns whether the given status code is a redirect status code.
- * 
- * @param statusCode A status code.
- * @returns Whether the given status code is a redirect status code.
- */
 export function isRedirectStatusCode(statusCode: number)
 {
 	return [ 300, 301, 302, 303, 305, 307, 308 ].includes(statusCode);

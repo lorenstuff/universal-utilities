@@ -21,7 +21,7 @@ const europeanCountryCodes: string[] =
 // Utility Functions
 //
 
-export function isEurope(countryCode: string)
+export function isEuropeanCountryCode(countryCode: string)
 {
 	return europeanCountryCodes.includes(countryCode);
 }
