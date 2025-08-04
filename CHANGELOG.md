@@ -1,4 +1,8 @@
 # Changelog
+## 5.0.0
+
+* refactor: made getUrlFontAwesomeIcon return an object instead of a string
+
 ## 4.0.0
 
 * refactor: flattened exports and rebranded package

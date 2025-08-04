@@ -13,11 +13,23 @@ const noHeadRequestDomains =
 // Utility Functions
 //
 
-export function getUrlFontAwesomeIconName(stringOrUrl: string | URL)
+export type GetUrlFontAwesomeIconNameResult =
+{
+	iconStyle: "fa-brands" | "fa-solid";
+	iconName: string;
+};
+
+export function getUrlFontAwesomeIconName
+(
+	stringOrUrl: string | URL,
+): GetUrlFontAwesomeIconNameResult
 {
 	if (typeof stringOrUrl == "string" && !URL.canParse(stringOrUrl))
 	{
-		return "fa-solid fa-link";
+		return {
+			iconStyle: "fa-solid",
+			iconName: "fa-link",
+		};
 	}
 
 	const url = new URL(stringOrUrl);
@@ -25,43 +37,73 @@ export function getUrlFontAwesomeIconName(stringOrUrl: string | URL)
 	switch (url.hostname)
 	{
 		case "bsky.app":
-			return "fa-brands fa-bluesky";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-bluesky",
+			};
 
 		case "facebook.com":
-			return "fa-brands fa-facebook";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-facebook",
+			};
 
 		case "github.com":
-			return "fa-brands fa-github";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-github",
+			};
 
 		case "gitlab.com":
-			return "fa-brands fa-gitlab";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-gitlab",
+			};
 
 		case "mastodon.social":
 		case "mas.to":
 		case "home.social": // RIP
 		case "social.treehouse.systems":
-			return "fa-brands fa-mastodon";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-mastodon",
+			};
 
 		case "twitter.com":
 		case "x.com": // Elon Musk is a man child
-			return "fa-brands fa-twitter";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-twitter",
+			};
 
 		case "reddit.com":
 		case "new.reddit.com":
 		case "old.reddit.com":
-			return "fa-brands fa-reddit";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-reddit",
+			};
 
 		case "steamcommunity.com":
 		case "store.steampowered.com":
-			return "fa-brands fa-steam";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-steam",
+			};
 
 		case "youtube.com":
 		case "www.youtube.com":
 		case "youtu.be":
-			return "fa-brands fa-youtube";
+			return {
+				iconStyle: "fa-brands",
+				iconName: "fa-youtube",
+			};
 
 		default:
-			return "fa-solid fa-link";
+			return {
+				iconStyle: "fa-solid",
+				iconName: "fa-link",
+			};
 	}
 }
 
